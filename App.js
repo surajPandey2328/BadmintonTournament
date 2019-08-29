@@ -5,43 +5,29 @@
  * @format
  * @flow
  */
-import React, {Fragment,Component} from 'react';
+import React from 'react';
+
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
 } from 'react-native';
 
-const App = () => {
-  return (
-    <Fragment>
-      <SafeAreaView>
-      <View style={styleOfView.viewStyle}>
-        <Text style={styleOfView.textStyle}>Welcome To Week Tournament </Text>
-      </View>
-      </SafeAreaView>
-    </Fragment>
-  );
-};
+import WeekView from './components/Tournament'
+
+class App extends React.Component {
+  render() {
+    return(
+      <WeekView style={styleOfView.mainContainer} />
+    )
+  }
+}
 
 const styleOfView = StyleSheet.create({
-viewStyle : {
- flex:1,
- alignItems:"center",
- alignContent:"center",
- backgroundColor: 'green',
-},
-textStyle : {fontSize: 20 , color: 'red' , fontWeight: 'bold'}
-
-})
-
-
-
-
-
-
+  mainContainer : {
+    flex:1,
+    alignItems:"center",
+    alignContent:"center",
+    backgroundColor: 'green',
+  },
+});
 
 export default App;
